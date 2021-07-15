@@ -12,12 +12,18 @@ import {
   ResponsiveContainer,
 } from "recharts";
 
+import Card from "../components/Card";
+
 export default function Home({ json }) {
   return (
     <>
       <Head>
         <link rel="preconnect" href="https://fonts.googleapis.com" />
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin />
+        <link
+          rel="preconnect"
+          href="https://fonts.gstatic.com"
+          crossOrigin="true"
+        />
         <link
           href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;900&display=swap"
           rel="stylesheet"
@@ -30,17 +36,17 @@ export default function Home({ json }) {
       </header>
       <main>
         <h2>すべて</h2>
-        <div style={{ width: "100%", height: 250 }} className="chart">
+        <div style={{ width: "100%", height: 200 }} className="chart">
           <ResponsiveContainer>
             <LineChart
               width={600}
               height={300}
               data={json}
               margin={{
-                top: 20,
+                top: 10,
                 right: 30,
                 left: 15,
-                bottom: 5,
+                bottom: 0,
               }}
             >
               <CartesianGrid strokeDasharray="3 3" />
@@ -65,64 +71,8 @@ export default function Home({ json }) {
             </LineChart>
           </ResponsiveContainer>
         </div>
-        <h2>楽天カード</h2>
-        <div style={{ width: "100%", height: 250 }} className="chart">
-          <ResponsiveContainer>
-            <LineChart
-              width={600}
-              height={300}
-              data={json}
-              margin={{
-                top: 20,
-                right: 30,
-                left: 15,
-                bottom: 5,
-              }}
-            >
-              <CartesianGrid strokeDasharray="3 3" />
-              <XAxis dataKey="data" />
-              <YAxis unit="円" />
-              <Tooltip />
-              <Line
-                type="monotone"
-                dataKey="楽天"
-                stroke="#000"
-                strokeWidth={6}
-                animationDuration={500}
-              />
-            </LineChart>
-          </ResponsiveContainer>
-        </div>
-        <p dangerouslySetInnerHTML={{ __html: json.pop().楽天site }}></p>
-        <h2>エポスカード</h2>
-        <div style={{ width: "100%", height: 250 }} className="chart">
-          <ResponsiveContainer>
-            <LineChart
-              width={600}
-              height={300}
-              data={json}
-              margin={{
-                top: 20,
-                right: 30,
-                left: 15,
-                bottom: 5,
-              }}
-            >
-              <CartesianGrid strokeDasharray="3 3" />
-              <XAxis dataKey="data" />
-              <YAxis unit="円" />
-              <Tooltip />
-              <Line
-                type="monotone"
-                dataKey="エポス"
-                stroke="#000"
-                strokeWidth={6}
-                animationDuration={500}
-              />
-            </LineChart>
-          </ResponsiveContainer>
-        </div>
-        <p dangerouslySetInnerHTML={{ __html: json.pop().エポスsite }}></p>
+        <Card name="楽天" json={json} />
+        <Card name="エポス" json={json} />
       </main>
     </>
   );
@@ -136,40 +86,58 @@ export async function getStaticProps() {
 
   // const json = [
   //   {
-  //     data: "2021/07/14",
+  //     data: "2021/07/13",
   //     楽天: 11000,
   //     楽天site:
-  //       '<a href="https://dokotoku.jp/link/moppy">&#x30E2;&#x30C3;&#x30D4;&#x30FC;</a>',
+  //       '[モッピー] 11000円：<a href="https://dokotoku.jp/link/11609">&#x697D;&#x5929;&#x30AB;&#x30FC;&#x30C9;&#x3010;&#x6700;&#x5927;18,000&#x5186;&#x76F8;&#x5F53;&#x3011;</a>',
   //     エポス: 6000,
   //     エポスsite:
-  //       '<a href="https://dokotoku.jp/link/lifemedia">&#x30E9;&#x30A4;&#x30D5;&#x30E1;&#x30C7;&#x30A3;&#x30A2;</a>',
+  //       '[ライフメディア] 6000円：<a href="https://dokotoku.jp/link/791">&#x30A8;&#x30DD;&#x30B9;&#x30AB;&#x30FC;&#x30C9;</a>',
   //   },
   //   {
   //     data: "2021/07/14",
   //     楽天: 11000,
   //     楽天site:
-  //       '<a href="https://dokotoku.jp/link/moppy">&#x30E2;&#x30C3;&#x30D4;&#x30FC;</a>',
+  //       '[モッピー] 11000円：<a href="https://dokotoku.jp/link/11609">&#x697D;&#x5929;&#x30AB;&#x30FC;&#x30C9;&#x3010;&#x6700;&#x5927;18,000&#x5186;&#x76F8;&#x5F53;&#x3011;</a>',
   //     エポス: 6000,
   //     エポスsite:
-  //       '<a href="https://dokotoku.jp/link/lifemedia">&#x30E9;&#x30A4;&#x30D5;&#x30E1;&#x30C7;&#x30A3;&#x30A2;</a>',
+  //       '[ライフメディア] 6000円：<a href="https://dokotoku.jp/link/791">&#x30A8;&#x30DD;&#x30B9;&#x30AB;&#x30FC;&#x30C9;</a>',
   //   },
   //   {
   //     data: "2021/07/15",
   //     楽天: 11000,
   //     楽天site:
-  //       '<a href="https://dokotoku.jp/link/moppy">&#x30E2;&#x30C3;&#x30D4;&#x30FC;</a>',
+  //       '[モッピー] 11000円：<a href="https://dokotoku.jp/link/11609">&#x697D;&#x5929;&#x30AB;&#x30FC;&#x30C9;&#x3010;&#x6700;&#x5927;18,000&#x5186;&#x76F8;&#x5F53;&#x3011;</a>',
   //     エポス: 6000,
   //     エポスsite:
-  //       '<a href="https://dokotoku.jp/link/lifemedia">&#x30E9;&#x30A4;&#x30D5;&#x30E1;&#x30C7;&#x30A3;&#x30A2;</a>',
+  //       '[ライフメディア] 6000円：<a href="https://dokotoku.jp/link/791">&#x30A8;&#x30DD;&#x30B9;&#x30AB;&#x30FC;&#x30C9;</a>',
   //   },
   //   {
   //     data: "2021/07/16",
   //     楽天: 11000,
   //     楽天site:
-  //       '<a href="https://dokotoku.jp/link/moppy">&#x30E2;&#x30C3;&#x30D4;&#x30FC;</a>',
+  //       '[モッピー] 11000円：<a href="https://dokotoku.jp/link/11609">&#x697D;&#x5929;&#x30AB;&#x30FC;&#x30C9;&#x3010;&#x6700;&#x5927;18,000&#x5186;&#x76F8;&#x5F53;&#x3011;</a>',
   //     エポス: 6000,
   //     エポスsite:
-  //       '<a href="https://dokotoku.jp/link/lifemedia">&#x30E9;&#x30A4;&#x30D5;&#x30E1;&#x30C7;&#x30A3;&#x30A2;</a>',
+  //       '[ライフメディア] 6000円：<a href="https://dokotoku.jp/link/791">&#x30A8;&#x30DD;&#x30B9;&#x30AB;&#x30FC;&#x30C9;</a>',
+  //   },
+  //   {
+  //     data: "2021/07/17",
+  //     楽天: 11000,
+  //     楽天site:
+  //       '[モッピー] 11000円：<a href="https://dokotoku.jp/link/11609">&#x697D;&#x5929;&#x30AB;&#x30FC;&#x30C9;&#x3010;&#x6700;&#x5927;18,000&#x5186;&#x76F8;&#x5F53;&#x3011;</a>',
+  //     エポス: 6000,
+  //     エポスsite:
+  //       '[ライフメディア] 6000円：<a href="https://dokotoku.jp/link/791">&#x30A8;&#x30DD;&#x30B9;&#x30AB;&#x30FC;&#x30C9;</a>',
+  //   },
+  //   {
+  //     data: "2021/07/16",
+  //     楽天: 11000,
+  //     楽天site:
+  //       '[モッピー] 11000円：<a href="https://dokotoku.jp/link/11609">&#x697D;&#x5929;&#x30AB;&#x30FC;&#x30C9;&#x3010;&#x6700;&#x5927;18,000&#x5186;&#x76F8;&#x5F53;&#x3011;</a>',
+  //     エポス: 6000,
+  //     エポスsite:
+  //       '[ライフメディア] 6000円：<a href="https://dokotoku.jp/link/791">&#x30A8;&#x30DD;&#x30B9;&#x30AB;&#x30FC;&#x30C9;</a>',
   //   },
   // ];
 

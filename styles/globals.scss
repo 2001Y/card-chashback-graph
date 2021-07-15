@@ -21,10 +21,10 @@ p {
 }
 
 .chart {
-  background-color: #fff;
+  background-color: rgba(255, 255, 255, 0.98);
   border-radius: 2.5rem;
-  padding: 1.3rem;
-  zoom: .8;
+  padding: 1.2rem;
+  font-size: .9rem;
 }
 
 @mixin bg-gradient($color: hsla(180, 65, 75, 1), $degrees: 180deg, $angle: 60deg, $start: 15%, $stop: 90%) {

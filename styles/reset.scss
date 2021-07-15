@@ -69,7 +69,11 @@ select::-ms-expand {
     display: none;
 }
 
-
+@media (max-width: 600px) {
+    :root {
+        font-size: 13px;
+    }
+}
 body {
     font-family: Helvetica, "游ゴシック", "Yu Gothic", YuGothic, -apple-system, Verdana, Meiryo;
     font-size: 16px;
@@ -118,29 +122,11 @@ h6 small {
     font-size: .4em
 }
 
-/* h2 {
-    font-size: 3rem;
-    margin-top: 4rem;
-    margin-bottom: 1rem
-}
-
-h3 {
-    font-size: 2rem;
-    margin-top: 2rem;
-    margin-bottom: 1rem
-}
-
-h4 {
-    font-size: 1.5rem;
-    margin-top: 2rem;
-    margin-bottom: 1rem
-} */
-
 #__next {
     max-width: 1000px;
     padding: 0 2rem;
     @media (max-width: 600px) {
-        padding: 0 1rem;
+        padding: 0 1.5rem;
     }
     margin: auto;
     /* margin:5rem auto 0 auto */
