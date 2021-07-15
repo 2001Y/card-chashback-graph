@@ -86,7 +86,7 @@ export default function Home({ json }) {
               <Line
                 type="monotone"
                 dataKey="楽天"
-                stroke="#8884d8"
+                stroke="#000"
                 strokeWidth={6}
                 animationDuration={500}
               />
@@ -115,7 +115,7 @@ export default function Home({ json }) {
               <Line
                 type="monotone"
                 dataKey="エポス"
-                stroke="#8884d8"
+                stroke="#000"
                 strokeWidth={6}
                 animationDuration={500}
               />

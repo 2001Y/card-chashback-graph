@@ -139,6 +139,9 @@ h4 {
 #__next {
     max-width: 1000px;
     padding: 0 2rem;
+    @media (max-width: 600px) {
+        padding: 0 1rem;
+    }
     margin: auto;
     /* margin:5rem auto 0 auto */
 }
