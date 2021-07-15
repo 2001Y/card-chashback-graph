@@ -71,7 +71,7 @@ select::-ms-expand {
 
 @media (max-width: 600px) {
     :root {
-        font-size: 13px;
+        font-size: 10px;
     }
 }
 body {
@@ -87,7 +87,6 @@ html {
 }
 
 @supports (-webkit-touch-callout: none) {
-
     body,
     html {
         min-height: -webkit-fill-available
