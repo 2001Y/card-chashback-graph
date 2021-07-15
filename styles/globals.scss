@@ -1,0 +1,43 @@
+body {
+    font-family: 'Noto Sans JP', sans-serif;
+}
+main {
+    max-width: 900px;
+    margin: auto;
+}
+
+h1,h2,h3,h4,h5,h6 {
+  color: #fff;
+  font-weight: bold;
+  margin: 1em 0 .4em;
+}
+h2 {
+  font-size: 2.5rem;
+}
+p {
+  color: #fff;
+  font-weight: bold;
+  margin-top: .5rem;
+}
+
+.chart {
+  background-color: #fff;
+  border-radius: 2.5rem;
+  padding: 1.3rem;
+  zoom: .8;
+}
+
+@mixin bg-gradient($color: hsla(180, 65, 75, 1), $degrees: 180deg, $angle: 60deg, $start: 15%, $stop: 90%) {
+    background-image: linear-gradient($angle, $color $start, adjust-hue($color, $degrees) $stop);
+  }
+  
+  $baseHue: 180;
+  $swingWidth: 100;
+  $randHue: $baseHue - random($swingWidth) + random($swingWidth);
+  $randHsla: hsla($randHue, 65, 75, 1);
+  
+  body {
+    width: 100%;
+    min-height: 100vh;
+    @include bg-gradient($randHsla, 100deg, 90deg, 0%, 100%);
+  }
