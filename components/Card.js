@@ -14,7 +14,7 @@ const Card = (props) => {
   return (
     <>
       <h2>{name}カード</h2>
-      <div style={{ width: "100%", height: 200 }} className="chart">
+      <div className="chart">
         <ResponsiveContainer>
           <LineChart
             width={600}

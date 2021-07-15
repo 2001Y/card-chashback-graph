@@ -36,7 +36,7 @@ export default function Home({ json }) {
       </header>
       <main>
         <h2>すべて</h2>
-        <div style={{ width: "100%", height: 200 }} className="chart">
+        <div className="chart">
           <ResponsiveContainer>
             <LineChart
               width={600}
