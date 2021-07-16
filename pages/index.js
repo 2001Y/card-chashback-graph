@@ -35,44 +35,25 @@ export default function Home({ json }) {
         </h1>
       </header>
       <main>
-        <h2>すべて</h2>
-        <div className="chart">
-          <ResponsiveContainer>
-            <LineChart
-              width={600}
-              height={300}
-              data={json}
-              margin={{
-                top: 10,
-                right: 30,
-                left: 15,
-                bottom: 0,
-              }}
-            >
-              <CartesianGrid strokeDasharray="3 3" />
-              <XAxis dataKey="data" />
-              <YAxis unit="円" />
-              <Tooltip />
-              <Legend />
-              <Line
-                type="monotone"
-                dataKey="エポス"
-                stroke="#ff0000"
-                strokeWidth={6}
-                animationDuration={500}
-              />
-              <Line
-                type="monotone"
-                dataKey="楽天"
-                stroke="#8884d8"
-                strokeWidth={6}
-                animationDuration={500}
-              />
-            </LineChart>
-          </ResponsiveContainer>
-        </div>
-        <Card name="楽天" json={json} />
-        <Card name="エポス" json={json} />
+        <Card
+          nameList={[
+            { name: "楽天カード", color: "#BBBBBB" },
+            { name: "エポスカード", color: "#ff0000" },
+            { name: "Yahoo カード", color: "#EE032B" },
+            { name: "JCB W", color: "#1A274F" },
+            { name: "三井住友カード プラチナ", color: "#201315" },
+          ]}
+          json={json}
+        />
+        <footer>
+          <a
+            href="http://2001y.me/blog"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            ©︎2001Y
+          </a>
+        </footer>
       </main>
     </>
   );
