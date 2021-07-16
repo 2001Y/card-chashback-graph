@@ -25,7 +25,7 @@ export default function Home({ json }) {
           crossOrigin="true"
         />
         <link
-          href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;900&display=swap"
+          href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@500;900&display=swap"
           rel="stylesheet"
         />
       </Head>
@@ -37,11 +37,12 @@ export default function Home({ json }) {
       <main>
         <Card
           nameList={[
-            { name: "楽天カード", color: "#BBBBBB" },
-            { name: "エポスカード", color: "#ff0000" },
+            { name: "楽天カード", color: "#b8b8b4" },
+            { name: "エポスカード", color: "#878787" },
             { name: "Yahoo カード", color: "#EE032B" },
-            { name: "JCB W", color: "#1A274F" },
+            { name: "JCB W", color: "#34498a" },
             { name: "三井住友カード プラチナ", color: "#201315" },
+            { name:"dカード GOLD",color: "#CFAC73" }
           ]}
           json={json}
         />

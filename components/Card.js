@@ -46,10 +46,13 @@ const Card = (props) => {
             </LineChart>
           </ResponsiveContainer>
         </div>
+        <p>
+          このサイトでは1日に1回、<a href="https://dokotoku.jp" target="_blank" rel="noopener noreferrer">どこ得</a> を巡回し各クレジットカードの最高還元額の推移を記録しています。今がお得なのかがわかりますので、ポイ活などにご活用ください。対応クレジットカードの希望は<a href="https://forms.gle/WDwrZiHJotFBWDfS8" target="_blank" rel="noopener noreferrer">お問い合わせ</a>よりお願いいたします。
+        </p>
       </section>
       {nameList.map((e, i) => (
         <section key={i} id={e.name}>
-          <h2>{e.name}</h2>
+          <h2>{e.name}<small>　<a href={"https://dokotoku.jp/?q="+e.name} target="_blank" rel="noopener noreferrer">＞どこ得で調べる</a></small></h2>
           <div className="chart">
             <ResponsiveContainer>
               <LineChart
@@ -70,7 +73,7 @@ const Card = (props) => {
                 <Line
                   type="monotone"
                   dataKey={e.name}
-                  stroke="#000"
+                  stroke={e.color}
                   strokeWidth={6}
                   animationDuration={500}
                 />
