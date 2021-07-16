@@ -31,7 +31,7 @@ export default function Home({ json }) {
       </Head>
       <header>
         <h1>
-          過去のクレジットカード新規作成によるポイントサイトのキャッシュバック率
+          過去のクレジットカード入会によるポイントサイトの最高還元金額の推移
         </h1>
       </header>
       <main>

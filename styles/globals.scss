@@ -26,7 +26,7 @@ h2 {
   font-size: 2.5rem;
 }
 
-p {
+p:not(.chart p) {
   @media (max-width: 600px) {
     font-size: 10px;
   }
