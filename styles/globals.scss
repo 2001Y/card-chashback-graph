@@ -21,6 +21,9 @@ h2 {
   background-color: rgba(255, 255, 255, 0.98);
   border-radius: 2.5rem;
   padding: 1.2rem;
+  @media (max-width: 600px) {
+    padding: 0 1.2rem;
+  }
   font-size: .9rem;
 }
 
