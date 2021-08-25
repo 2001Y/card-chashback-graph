@@ -40,6 +40,7 @@ const Card = (props) => {
                   stroke={e.color}
                   strokeWidth={6}
                   animationDuration={500}
+                  dot={false}
                   key={i}
                 />
               ))}
@@ -47,7 +48,7 @@ const Card = (props) => {
           </ResponsiveContainer>
         </div>
         <p>
-          このサイトでは1日に1回、<a href="https://dokotoku.jp" target="_blank" rel="noopener noreferrer">どこ得</a>を巡回し、各クレジットカード入会で得られる最高金額の推移を記録しています。今がお得なのかがわかりますので、ポイ活などにご活用ください。対応クレジットカードの希望は<a href="https://forms.gle/WDwrZiHJotFBWDfS8" target="_blank" rel="noopener noreferrer">お問い合わせ</a>よりお願いいたします。
+          このサイトでは1日に1回、<a href="https://dokotoku.jp" target="_blank" rel="noopener noreferrer">どこ得</a>を巡回し、各クレジットカード入会で得られる最高金額の推移をグラフに記録しています。今がお得なのかがわかりますので、ポイ活などにご活用ください。対応クレジットカードの希望は<a href="https://forms.gle/WDwrZiHJotFBWDfS8" target="_blank" rel="noopener noreferrer">お問い合わせ</a>よりお願いいたします。
         </p>
       </section>
       {nameList.map((e, i) => (
@@ -76,6 +77,7 @@ const Card = (props) => {
                   stroke={e.color}
                   strokeWidth={6}
                   animationDuration={500}
+                  dot={false}
                 />
               </LineChart>
             </ResponsiveContainer>

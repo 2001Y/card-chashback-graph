@@ -42,7 +42,8 @@ export default function Home({ json }) {
             { name: "Yahoo カード", color: "#EE032B" },
             { name: "JCB W", color: "#34498a" },
             { name: "三井住友カード プラチナ", color: "#201315" },
-            { name:"dカード GOLD",color: "#CFAC73" }
+            { name: "dカード GOLD", color: "#CFAC73" },
+            { name:"LINE Pay カード",color: "#06c755" }
           ]}
           json={json}
         />
